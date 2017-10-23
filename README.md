@@ -1,5 +1,7 @@
 # POJ1088
 #include<stdio.h>
+#define max(a,b) ((a)>(b)?(a):(b)
+
 int path=1,maxpath=1;
 int row=0,col=0;
 int height[110][110]={0},length[110][110]={0};
@@ -13,8 +15,8 @@ int ijhigher(int i,int j,int x,int y)
             if(length[x][y]==0)
                 get_ij_length(x,y);
             path=1+length[x][y];
-            maxpath=path>maxpath?path:maxpath;
-            //printf("path%-3d lengthij %d \n",path,length[i][j]);
+            maxpath=max(path,maxpath);
+            
         }
     return 0;
 }
@@ -48,9 +50,10 @@ int main (void)
         for (j=0;j<col;j++)
         {
             get_ij_length(i,j);
-            max_ij_length= max_ij_length>length[i][j] ? max_ij_length:length[i][j];
+            max_ij_length = max(max_ij_length,length[i][j]);
         }
     printf("%d ", max_ij_length);
+    
     return 0;
 }
 
