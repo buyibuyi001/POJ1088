@@ -1,12 +1,10 @@
 # POJ1088
 #include<stdio.h>
 #define max(a,b) ((a)>(b)?(a):(b)
-
 int path=1,maxpath=1;
 int row=0,col=0;
 int height[110][110]={0},length[110][110]={0};
 int get_ij_length(int,int);
-
 int ijhigher(int i,int j,int x,int y)
 {
     if ( x>=0 && x<row && y>=0 && y<col && height[i][j]>height[x][y] )
