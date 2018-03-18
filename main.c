@@ -32,21 +32,20 @@ int get_len(int i,int j)
 
 int main (void)
 {
-    int i=0,j=0;
     int max_len=0;int curmax=0;
     scanf("%d %d",&row,&col);
-    for (i=0;i<row;i++)
-        for (j=0;j<col;j++)
+    for (int i=0;i<row;i++)
+        for (int j=0;j<col;j++)
             scanf("%d",&hght[i][j]);
-    for (i=0;i<row;i++)
-        for (j=0;j<col;j++)
+    for (int i=0;i<row;i++)
+        for (int j=0;j<col;j++)
         {
             len[i][j]=get_len(i,j);
             max_len= max_len>len[i][j] ? max_len:len[i][j];
         }
     printf("%d \n", max_len);
-    for (i=0;i<row;i++){
-        for (j=0;j<col;j++)
+    for (int i=0;i<row;i++){
+        for (int j=0;j<col;j++)
             printf("%-3d ",len[i][j]);
         printf("\n"); }
     return 0;
